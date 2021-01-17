@@ -2,34 +2,43 @@
     <title>DOM Manipulation</title>
 
     <body>
-         <script>
+        <div class = "container">
+            <button id="1">Click me 1!</button><br>
+            <button id="2">Click me 2!</button><br>
+            <button id="3">Click me 3!</button><br>
+        </div>
+        <script>
          
         const paragraph = document.createElement('p');
         paragraph.innerHTML = "Hey I'm red!";
-        paragraph.style.color = "red";
-        
+        paragraph.style.color = "red";    
         const headline = document.createElement('h3');
         headline.innerHTML = "I'm a blue h3!";
         headline.style.color = "blue";
-
         const someDiv = document.createElement('div');
         someDiv.style.border = "1px solid black";
         someDiv.style.background = "violet";
-
         const headlineInDiv = document.createElement('h1');
         headlineInDiv.innerHTML = "I'm in a div";
-
         const paragraphInDiv = document.createElement('p');
         paragraphInDiv.innerHTML = "ME TOO!";
 
         someDiv.appendChild(headlineInDiv);
         someDiv.appendChild(paragraphInDiv);
 
-
         document.body.appendChild(paragraph);
         document.body.appendChild(headline);
         document.body.appendChild(someDiv);
+
+        const buttons = document.querySelectorAll('.container');
+        buttons.forEach((btn) => {
+
+            btn.addEventListener('click',function(e){
+                
+                colors = ['blue', 'red', 'green', 'yellow', 'purple', 'white']
+                console.log(e.target.style.background = colors[Math.floor(Math.random()*colors.length)]);
+            });
+        });
         </script>
     </body>
-   
 </html>
