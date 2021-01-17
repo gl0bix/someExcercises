@@ -1,0 +1,35 @@
+<html>
+    <title>DOM Manipulation</title>
+
+    <body>
+         <script>
+         
+        const paragraph = document.createElement('p');
+        paragraph.innerHTML = "Hey I'm red!";
+        paragraph.style.color = "red";
+        
+        const headline = document.createElement('h3');
+        headline.innerHTML = "I'm a blue h3!";
+        headline.style.color = "blue";
+
+        const someDiv = document.createElement('div');
+        someDiv.style.border = "1px solid black";
+        someDiv.style.background = "violet";
+
+        const headlineInDiv = document.createElement('h1');
+        headlineInDiv.innerHTML = "I'm in a div";
+
+        const paragraphInDiv = document.createElement('p');
+        paragraphInDiv.innerHTML = "ME TOO!";
+
+        someDiv.appendChild(headlineInDiv);
+        someDiv.appendChild(paragraphInDiv);
+
+
+        document.body.appendChild(paragraph);
+        document.body.appendChild(headline);
+        document.body.appendChild(someDiv);
+        </script>
+    </body>
+   
+</html>
